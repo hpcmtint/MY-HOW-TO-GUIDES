@@ -1,6 +1,6 @@
 # Ceph Cluster Deployment on AWS: Mastering Distributed Storage - techbeatly
 
-(Ceph Cluster Deployment on AWS: Mastering Distributed Storage - techbeatly)[https://www.techbeatly.com/ceph-cluster-deployment-on-aws-mastering-distributed-storage/]
+[https://www.techbeatly.com/ceph-cluster-deployment-on-aws-mastering-distributed-storage/]
 
 In today’s data-driven world, scalable and reliable storage solutions have become paramount. This is where Ceph, an open-source software-defined storage system, comes into play.  
 Ceph offers a flexible platform for efficiently managing vast amounts of data, meeting organizations’ storage demands. Combined with Amazon Web Services (AWS), Ceph on AWS provides unparalleled scalability, performance, and cost-effectiveness.
