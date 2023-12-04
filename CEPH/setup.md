@@ -129,8 +129,11 @@ Now, it’s time to initialise the bootstrap process of the ceph cluster by crea
 
 Create an initial Configuration file using the below content
 
-```yaml
+```bash
 [root@ip-172.31.83.99 ~]# cat initial_config.yaml
+```
+
+```yaml
 ---
 service_type: host
 addr: 172.31.83.99 # update private ip of server1
