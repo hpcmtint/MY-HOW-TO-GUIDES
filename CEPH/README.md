@@ -121,7 +121,7 @@ server2
 
 Now, run the ansible playbook “cephadm-preflight.yml” to do the preflight check and installation of packages which is need to for the bootstrap of the Ceph cluster.
 
-```[root@ip-172.31.83.99 cephadm-ansible]# ansible-playbook -i hosts cephadm-preflight.yml
+```[root@ip-172.31.83.99 cephadm-ansible]# ansible-playbook -i hosts cephadm-preflight.yml```
 
 The preflight check playbook worked fine and completed the initial configuration on both instances.
 
@@ -165,12 +165,16 @@ data_devices:
   paths:
     - /dev/xvdb  #use lsblk -fp command to get the storage devices path
     - /dev/xvdc
+```
+```bash
 [root@ip-172.31.83.99 ~]#
 ```
 
 Now, run the cephadm utility to initialize the bootstrap process.
 
-```[root@ip-172.31.83.99 ~]# cephadm bootstrap --mon-ip=172.31.83.99 --apply-spec=initial_config.yaml --initial-dashboard-password=redhat --dashboard-password-noupdate --allow-fqdn-hostname
+```bash
+[root@ip-172.31.83.99 ~]# cephadm bootstrap --mon-ip=172.31.83.99 --apply-spec=initial_config.yaml --initial-dashboard-password=redhat --dashboard-password-noupdate --allow-fqdn-hostname
+```
 
 Now Cluster got deployed and we can access it using a web browser as well with the public IP of server1 instance with port 8443.
 
@@ -197,6 +201,7 @@ spec:
    rgw_realm: myrealm
    rgw_zone: default
 ```
+
 ```bash
 [root@ip-172-31-83-99 ~]#
 [root@ip-172-31-83-99 ~]# ceph orch ps --daemon-type rgw
@@ -215,6 +220,7 @@ osd.default_drive_group                     4  4m ago     32m  server1.example.c
 prometheus               ?:9095           1/1  4m ago     32m  count:1
 rgw.demorgw              ?:8080           1/1  41s ago    47s  count-per-host:1;label:rgw
 ```
+
 It’s also accessible using a web browser on port 8080 as we configured
 
 Now, we need to create a rados gateway user which we will be used to access AWS to create an s3 bucket
@@ -222,6 +228,7 @@ Now, we need to create a rados gateway user which we will be used to access AWS 
 ```bash
 [root@ip-172-31-83-99 ~]# radosgw-admin user create --uid nikhil --display-name "Nikhil Kumar" --access-key=XXXX --secret-key=XXXXXXXXXXXXX
 ```
+
 ```json
 {
     "user_id": "nikhil",
